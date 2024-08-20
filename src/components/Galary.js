@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const Gallery = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
+
   // Array of image URLs for the gallery
   const images = [
     'https://img.freepik.com/premium-photo/indian-school-students-group-sitting-classroom_130568-392.jpg',
@@ -23,16 +33,27 @@ const Gallery = () => {
           {images.map((url, index) => (
             <Col md={4} sm={6} xs={12} key={index} className="mb-4">
               <Card>
-                <Card.Img 
-                  variant="top" 
-                  src={url} 
-                  alt={`Gallery image ${index + 1}`} 
+                <div
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
                   style={{ 
-                    width: '100%', 
-                    height: '200px', // Fixed height for all images
-                    objectFit: 'cover' // Ensures images cover the area without distortion
-                  }} 
-                />
+                    overflow: 'hidden', 
+                    transition: 'transform 0.3s ease-in-out',
+                    transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)' // Zoom effect
+                  }}
+                >
+                  <Card.Img 
+                    variant="top" 
+                    src={url} 
+                    alt={`Gallery image ${index + 1}`} 
+                    style={{ 
+                      width: '100%', 
+                      height: '200px', // Fixed height for all images
+                      objectFit: 'cover', // Ensures images cover the area without distortion
+                      transition: 'transform 0.3s ease-in-out'
+                    }} 
+                  />
+                </div>
               </Card>
             </Col>
           ))}

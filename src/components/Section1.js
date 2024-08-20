@@ -1,4 +1,3 @@
- // src/components/Section1.js
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AdmissionInquiryForm from './AdmissionInquiryForm';
@@ -42,23 +41,41 @@ const Section1 = () => {
     },
   ];
 
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
+
   return (
     <div className="container mt-4">
       <div className="row">
         {cardData.map((card, index) => (
           <div key={index} className="col-lg-4 col-md-6 mb-4">
             <div className="card" style={{ overflow: 'hidden', position: 'relative' }}>
-              <img
-                src={card.image}
-                className="card-img-top"
-                alt={`Card ${index + 1}`}
-                style={{
-                  width: '100%',
-                  height: '200px', // Set a fixed height for all images
-                  objectFit: 'cover', // Ensure images cover the area
-                  transition: 'transform 0.3s ease-in-out',
-                }}
-              />
+              <div
+                className="card-img-wrapper"
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+                style={{ overflow: 'hidden' }}
+              >
+                <img
+                  src={card.image}
+                  className="card-img-top"
+                  alt={`Card ${index + 1}`}
+                  style={{
+                    width: '100%',
+                    height: '200px', // Set a fixed height for all images
+                    objectFit: 'cover', // Ensure images cover the area
+                    transition: 'transform 0.3s ease-in-out',
+                    transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)', // Zoom effect
+                  }}
+                />
+              </div>
               <div className="card-body">
                 <h5 className="card-title">{card.title}</h5>
                 <p className="card-text">{card.description}</p>

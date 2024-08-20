@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const PortfolioSection = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
+
   const portfolioItems = [
     {
       image: 'https://media.istockphoto.com/id/626964604/photo/running-outside-during-recess.jpg?s=612x612&w=0&k=20&c=WOutW-I6xnkNu-WEB1ZPQZJw8i_5q8eYhytZXIeneBE=',
@@ -25,8 +35,8 @@ const PortfolioSection = () => {
     },
     {
       image: 'https://blog.khelomore.com/wp-content/uploads/2017/12/IMG_2326.jpg',
-      title: '10th Standard - Volleyball Championship',
-      content: 'In the 10th standard, the school\'s volleyball team reached the finals of the district-level championship, finishing as strong runners-up.',
+      title: '10th Standard -   throw Championship',
+      content: 'In the 10th standard, the school\'s Throwball team reached the finals of the district-level championship, finishing as strong runners-up.',
     },
     {
       image: 'https://c8.alamy.com/comp/2M4N9MM/school-students-playing-volleyball-in-playground-stock-photos-2M4N9MM.jpg',
@@ -41,14 +51,27 @@ const PortfolioSection = () => {
         <Row id="filterable-content">
           {portfolioItems.map((item, index) => (
             <Col sm={12} md={6} lg={4} className="filter-item all web illustrator" key={index}>
-              <Card className="shadow border h-100">
-                <Card.Img
-                  variant="top"
-                  src={item.image}
-                  alt={`work-thumbnail-${index}`}
-                  style={{ transition: 'transform 0.3s ease-in-out' }}
-                  className="img-fluid"
-                />
+              <Card
+                className="shadow border h-100"
+                style={{ overflow: 'hidden' }}
+              >
+                <div
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                  style={{ 
+                    overflow: 'hidden', 
+                    transition: 'transform 0.3s ease-in-out',
+                    transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)' // Zoom effect
+                  }}
+                >
+                  <Card.Img
+                    variant="top"
+                    src={item.image}
+                    alt={`work-thumbnail-${index}`}
+                    className="img-fluid"
+                    style={{ transition: 'transform 0.3s ease-in-out' }}
+                  />
+                </div>
                 <Card.Body>
                   <h5 className="mt-0">{item.title}</h5>
                   <p className="text-muted mb-1">{item.content}</p>
