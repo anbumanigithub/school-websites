@@ -1,37 +1,36 @@
-// src/components/NewsNotifications.js
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const newsItems = [
   {
-    image: 'https://via.placeholder.com/150?text=gallery18',
-    title: "Institute of Technology’s Annual Cultural Meet held on 24th February 2023.",
-    date: "June 23"
+    image: 'https://img.freepik.com/free-photo/schoolkids-having-science-experiment_23-2149211614.jpg',
+    title: "Science Fair 2024: Students Showcase Innovative Projects",
+    date: "August 18, 2024"
   },
   {
-    image: 'https://via.placeholder.com/150?text=gallery7',
-    title: "Institute of Technology’s Annual Cultural Meet held on 24th February 2023.",
-    date: "June 23"
+    image: 'https://img.freepik.com/free-photo/group-diverse-young-students-celebrating-graduation_53876-102695.jpg',
+    title: "Annual Graduation Day: Celebrating Academic Achievements",
+    date: "August 10, 2024"
   },
   {
-    image: 'https://via.placeholder.com/150?text=gallery30',
-    title: "Institute of Technology’s Annual Cultural Meet held on 24th February 2023.",
-    date: "June 23"
+    image: 'https://img.freepik.com/free-photo/teacher-students-school_53876-93019.jpg',
+    title: "Interactive Learning Sessions: New Approaches to Education",
+    date: "July 28, 2024"
   },
   {
-    image: 'https://via.placeholder.com/150?text=gallery28',
-    title: "Institute of Technology’s Annual Cultural Meet held on 24th February 2023.",
-    date: "June 23"
+    image: 'https://img.freepik.com/free-photo/kids-studying-science-experiment-lab_53876-91029.jpg',
+    title: "Hands-On Learning: Exploring Science Through Experiments",
+    date: "July 15, 2024"
   },
   {
-    image: 'https://via.placeholder.com/150?text=gallery18',
-    title: "Institute of Technology’s Annual Cultural Meet held on 24th February 2023.",
-    date: "June 23"
+    image: 'https://img.freepik.com/free-photo/kids-playing-sports-field_53876-74616.jpg',
+    title: "Sports Day 2024: Encouraging Physical Fitness and Teamwork",
+    date: "June 30, 2024"
   },
   {
-    image: 'https://via.placeholder.com/150?text=gallery7',
-    title: "Institute of Technology’s Annual Cultural Meet held on 24th February 2023.",
-    date: "June 23"
+    image: 'https://img.freepik.com/free-photo/indian-school-students-group-sitting-classroom_130568-392.jpg',
+    title: "Cultural Fest 2024: A Celebration of Diversity and Talent",
+    date: "June 23, 2024"
   }
 ];
 

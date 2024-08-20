@@ -17,11 +17,11 @@ const Footer = () => {
           <div className="col-md-4 mb-4">
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
-              <li><a href="!#" className="text-light">Home</a></li>
-              <li><a href="!#" className="text-light">About</a></li>
-              <li><a href="!#" className="text-light">Admission</a></li>
-              <li><a href="!#" className="text-light">Contact</a></li>
-              <li><a href="!#" className="text-light">Privacy Policy</a></li>
+              <li><a href="!#" className="text-light"  style={{textDecoration:"none"}}>Home</a></li>
+              <li><a href="!#" className="text-light"  style={{textDecoration:"none"}}>About</a></li>
+              <li><a href="!#" className="text-light"  style={{textDecoration:"none"}}>Admission</a></li>
+              <li><a href="!#" className="text-light"  style={{textDecoration:"none"}}>Contact</a></li>
+              <li><a href="!#" className="text-light"  style={{textDecoration:"none"}}>Privacy Policy</a></li>
             </ul>
           </div>
 
@@ -30,8 +30,8 @@ const Footer = () => {
             <div>
               <h5>Contact Us</h5>
               <p>
-                <i className="fas fa-map-marker-alt"></i> 123 Montessori Street, City, Country<br />
-                <i className="fas fa-phone"></i> +123 456 7890<br />
+                <i className="fas fa-map-marker-alt"></i> 123 Montessori Street,Sholinganalore,chennai <br />
+                <i className="fas fa-phone"></i> +91 94444 81438<br />
                 <i className="fas fa-envelope"></i> info@vrukshamontessori.com
               </p>
             </div>
